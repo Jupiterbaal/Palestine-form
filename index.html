@@ -98,7 +98,7 @@ I believe public clarification from your office is urgently needed to ensure tha
 
 Thank you for your time and attention.
 
-Yours sincerely,{sig}`;
+Yours sincerely,\n` + sig;
   const mailto = `mailto:attorney.general@attorneygeneral.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const link = document.getElementById('mailtoAG');
   link.href = mailto;
@@ -148,7 +148,7 @@ Thank you for your time and attention.
 ________________________________________
 Yours sincerely,
 
-{sig}`;
+\n` + sig;
   const mailto = `mailto:publicenquiries@cps.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const link = document.getElementById('mailtoDPP');
   link.href = mailto;
