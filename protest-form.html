@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Protest Rights Letters</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+    input, select, textarea, button { width: 100%; padding: 10px; margin-top: 10px; font-size: 1em; }
+  </style>
+</head>
+<body>
+
+<h1>Protest Rights Letter Generator</h1>
+<p>Use this form to send letters to UK authorities about the misuse of the Terrorism Act in relation to Palestine solidarity protests.</p>
+
+<label>Your Full Name:
+  <input type="text" id="name" placeholder="Jane Doe">
+</label>
+
+<label>Your Email (optional):
+  <input type="email" id="email" placeholder="janedoe@example.com">
+</label>
+
+<label>Select Recipient:
+  <select id="recipient">
+    <option value="ag">Attorney General</option>
+    <option value="dpp">Director of Public Prosecutions</option>
+    <option value="both">Both</option>
+  </select>
+</label>
+
+<button onclick="sendEmail()">Open Email App</button>
+
+<script>
+function sendEmail() {
+  const name = document.getElementById('name').value || '[Your Name]';
+  const email = document.getElementById('email').value;
+  const recipient = document.getElementById('recipient').value;
+
+  const sig = `\n\nYours sincerely,\n${name}${email ? `\n${email}` : ''}`;
+
+  let subject = 'Concern Regarding Use of Terrorism Act Against Pro-Palestinian Protester';
+  let agBody = `Dear Attorney General,\n\nI am writing to express serious concern regarding the application of the Terrorism Act 2000 by Kent Police officers who warned a peaceful protester that holding a Palestinian flag and stating “Free Palestine” could be construed as support for a proscribed terrorist organisation.\n\nThis raises questions about the CPS’s interpretation of the law and its impact on freedom of expression. I respectfully ask whether general political statements are being treated as criminal under current guidance.\n` + sig;
+
+  let dppBody = `Dear Director of Public Prosecutions,\n\nI am writing to seek clarification regarding the CPS’s position on the use of the Terrorism Act against non-violent expressions of political support for Palestine, including the display of flags or slogans such as “Free Palestine.”\n\nI am concerned that peaceful protest is being interpreted as criminal activity under terrorism legislation, and I urge the CPS to issue guidance to prevent overreach.\n` + sig;
+
+  if (recipient === 'ag') {
+    window.location.href = `mailto:attorney.general@attorneygeneral.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(agBody)}`;
+  } else if (recipient === 'dpp') {
+    window.location.href = `mailto:publicenquiries@cps.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(dppBody)}`;
+  } else if (recipient === 'both') {
+    alert("You selected both. Please send to each recipient separately.\n\nFirst opening Attorney General email...");
+    window.open(`mailto:attorney.general@attorneygeneral.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(agBody)}`, "_blank");
+    setTimeout(() => {
+      window.location.href = `mailto:publicenquiries@cps.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(dppBody)}`;
+    }, 1000);
+  }
+}
+</script>
+
+</body>
+</html>
