@@ -12,47 +12,47 @@
 <body>
 
 <h1>Protest Rights Email Generator</h1>
-<p>Use this tool to generate a customised email to either the Attorney General or the Director of Public Prosecutions regarding concerns over the use of the Terrorism Act against peaceful protest.</p>
+<p>Generate a custom email to the appropriate legal authority regarding the misuse of the Terrorism Act during peaceful protest.</p>
 
 <section>
-<h2>Email the Attorney General</h2>
-<label>Your Full Name:
-  <input type="text" id="nameAG" placeholder="Your Name">
-</label>
-<label>Your Email (optional):
-  <input type="email" id="emailAG" placeholder="you@example.com">
-</label>
-<button onclick="sendEmailAG()">Open Email to Attorney General</button>
+  <h2>Email the Attorney General</h2>
+  <label>Your Full Name:
+    <input type="text" id="nameAG" placeholder="Your Name">
+  </label>
+  <label>Your Email (optional):
+    <input type="email" id="emailAG" placeholder="you@example.com">
+  </label>
+  <button onclick="sendEmailAG()">Open Email to Attorney General</button>
 </section>
 
 <section>
-<h2>Email the Director of Public Prosecutions</h2>
-<label>Your Full Name:
-  <input type="text" id="nameDPP" placeholder="Your Name">
-</label>
-<label>Your Email (optional):
-  <input type="email" id="emailDPP" placeholder="you@example.com">
-</label>
-<button onclick="sendEmailDPP()">Open Email to Director of Public Prosecutions</button>
+  <h2>Email the Director of Public Prosecutions</h2>
+  <label>Your Full Name:
+    <input type="text" id="nameDPP" placeholder="Your Name">
+  </label>
+  <label>Your Email (optional):
+    <input type="email" id="emailDPP" placeholder="you@example.com">
+  </label>
+  <button onclick="sendEmailDPP()">Open Email to Director of Public Prosecutions</button>
 </section>
 
 <script>
 function sendEmailAG() {
-  const name = document.getElementById('nameAG').value.trim() || '[Your Name]';
-  const email = document.getElementById('emailAG').value.trim();
+  const name = document.getElementById('nameAG').value || '[Your Name]';
+  const email = document.getElementById('emailAG').value;
   const sig = `\\n\\nYours sincerely,\\n${name}${email ? `\\n${email}` : ''}`;
-  const subject = 'Request for Clarification on Application of Terrorism Act to Pro-Palestinian Expression in Kent Police Incident';
+  const subject = "Request for Clarification on Application of Terrorism Act to Pro-Palestinian Expression in Kent Police Incident";
   const body = `Dear Attorney General,\\n\\nI am writing to express serious concern regarding the application of the Terrorism Act 2000 by officers of Kent Police in a recent incident involving a pro-Palestinian campaigner. I am seeking clarification on the official legal position and prosecutorial guidance with regard to political expression in the context of Palestine solidarity activism.\\n\\nThe incident occurred on Monday 14 July 2025 at approximately 17:30 at St George’s roundabout in Canterbury, Kent. A campaigner, identified as Laura Morton, was approached by officers while holding a Palestinian flag and stating “Free Palestine.” She was warned that her actions could be construed as support for a proscribed terrorist organisation, and she was told she might be arrested under the Terrorism Act if she continued or refused to provide her name and address.\\n\\nOne of the officers was recorded stating that:\\n\\"mentioning freedom of Gaza, Israel, genocide… will come under prescribed groups, which are terror groups… dictated by the government.\\"\\n\\nThe officer further warned that expressing such views again, particularly in Canterbury, would likely lead to arrest under the Act.\\n\\nFollowing the incident, a Kent Police spokesperson issued a statement to the press saying:\\n\\"Under the Terrorism Act it is a criminal offence to carry or display items that may arouse reasonable suspicion that an individual is a member or supporter of a proscribed organisation such as Palestine Action.\\"\\n\\nLegal Concerns and Request for Clarification\\n\\nI wish to raise the following concerns and seek official clarification from your office:\\n\\n1. Freedom of Expression\\nUnder Article 10 of the Human Rights Act 1998 and the European Convention on Human Rights, individuals are guaranteed the right to express political opinions—even controversial or dissenting ones—provided they do not incite violence or hatred. Is it the view of your office that expressing general support for the Palestinian cause (e.g., by saying “Free Palestine” or displaying a national flag) constitutes a criminal offence under current terrorism legislation?\\n\\n2. Misapplication of Terrorism Powers\\nThe Kent Police statement and officer’s conduct suggest an interpretation whereby peaceful protest or solidarity with Palestine could be criminalised without any direct reference to a specific proscribed group. Does the Crown Prosecution Service, under your oversight, issue or endorse guidance that would justify such an interpretation?\\n\\n3. Proportionality and Public Interest\\nThe chilling effect of treating peaceful expressions of solidarity as a national security matter cannot be overstated. I respectfully request clarification as to whether any national prosecutorial guidance is currently in place that balances freedom of expression with Terrorism Act enforcement, particularly in the context of Palestine-related activism.\\n\\n4. Palestine Action vs Palestinian Identity\\nThe conflation of general support for Palestinian rights with support for a proscribed group such as Palestine Action raises serious questions about the precision and legality of police conduct. Could your office clarify how law enforcement and the CPS are expected to distinguish between:\\n- lawful expression of political solidarity, and\\n- unlawful material support for a proscribed organisation?\\n\\nRequest\\n\\nGiven the seriousness of this incident and the potential implications for civil liberties, I respectfully ask:\\n- That your office clarify the legal position regarding the application of the Terrorism Act to political protest and solidarity with Palestine;\\n- That consideration be given to issuing updated public-facing guidance to prevent misuse of counter-terrorism powers against peaceful demonstrators; and\\n- That you confirm whether the CPS has prosecuted or intends to prosecute individuals solely on the basis of public displays such as Palestinian flags or slogans like "Free Palestine."\\n\\nI believe public clarification from your office is urgently needed to ensure that constitutional rights to freedom of expression are not unlawfully curtailed.\\n\\nThank you for your time and attention.` + sig;
 
   window.location.href = `mailto:attorney.general@attorneygeneral.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 function sendEmailDPP() {
-  const name = document.getElementById('nameDPP').value.trim() || '[Your Name]';
-  const email = document.getElementById('emailDPP').value.trim();
+  const name = document.getElementById('nameDPP').value || '[Your Name]';
+  const email = document.getElementById('emailDPP').value;
   const sig = `\\n\\nYours sincerely,\\n${name}${email ? `\\n${email}` : ''}`;
-  const subject = 'Request for CPS Guidance on Pro-Palestinian Expression and the Terrorism Act';
-  const body = `Dear Director of Public Prosecutions,\\n\\nI am writing to seek clarification regarding the Crown Prosecution Service’s position on the application of the Terrorism Act 2000 in relation to political expression and protest concerning Palestine.\\n\\nOn Monday 14 July 2025 at approximately 17:30, a peaceful protester, Laura Morton, was approached by Kent Police while holding a Palestinian flag and stating “Free Palestine” at St George’s roundabout in Canterbury. Officers informed her that such actions could be construed as support for a proscribed terrorist organisation, and warned her that she could be arrested under the Terrorism Act if she refused to provide her name or continued expressing similar views.\\n\\nOne officer was recorded stating:\\n\\"Mentioning freedom of Gaza, Israel, genocide… will come under prescribed groups, which are terror groups… dictated by the government.\\"\\n\\nKent Police later released a public statement saying:\\n\\"Under the Terrorism Act it is a criminal offence to carry or display items that may arouse reasonable suspicion that an individual is a member or supporter of a proscribed organisation such as Palestine Action.\\"\\n\\nGiven the CPS's role in guiding prosecutions and advising on the public interest, I respectfully request clarification on the following points:\\n\\n1. Threshold for Reasonable Suspicion\\nDoes the CPS consider it lawful or proportionate for police to interpret the display of a national flag or the expression of slogans such as “Free Palestine” as sufficient to arouse reasonable suspicion of support for a proscribed group?\\n\\n2. CPS Guidance to Police and Prosecutors\\nHas the CPS issued, or is it considering issuing, any guidance to ensure that peaceful protest and expressions of solidarity with Palestine are not misinterpreted as criminal conduct under counter-terrorism legislation?\\n\\n3. Freedom of Expression\\nGiven the protections under Article 10 of the Human Rights Act 1998 and the European Convention on Human Rights, how does the CPS ensure that public prosecutors distinguish between:\\n- Lawful political expression and dissent, and\\n- Unlawful support for proscribed organisations?\\n\\n4. Clarification of Legal Standards\\nWould the CPS consider issuing public-facing clarification to help prevent further chilling effects on protest, especially in cases where expressions of identity or political solidarity are being conflated with extremism?\\n\\nRequest\\n\\nI respectfully ask whether the Crown Prosecution Service intends to:\\n- Clarify its prosecutorial standards with respect to peaceful political protest; and\\n- Prevent misuse of anti-terrorism laws against individuals who express general support for Palestine without any affiliation with proscribed groups.\\n\\nThis issue raises serious concerns about the balance between public safety and fundamental rights. I believe it is essential that prosecutorial discretion is exercised transparently and proportionately to maintain public confidence in the justice system.\\n\\nThank you for your time and attention.` + sig;
+  const subject = "Request for CPS Guidance on Pro-Palestinian Expression and the Terrorism Act";
+  const body = `Dear Director of Public Prosecutions,\\n\\nI am writing to seek clarification regarding the Crown Prosecution Service’s position on the application of the Terrorism Act 2000 in relation to political expression and protest concerning Palestine.\\n\\nOn Monday 14 July 2025 at approximately 17:30, a peaceful protester, Laura Morton, was approached by Kent Police while holding a Palestinian flag and stating “Free Palestine” at St George’s roundabout in Canterbury. Officers informed her that such actions could be construed as support for a proscribed terrorist organisation, and warned her that she could be arrested under the Terrorism Act if she refused to provide her name or continued expressing similar views.\\n\\nOne officer was recorded stating:\\n\\"Mentioning freedom of Gaza, Israel, genocide… will come under prescribed groups, which are terror groups… dictated by the government.\\"\\n\\nKent Police later released a public statement saying:\\n\\"Under the Terrorism Act it is a criminal offence to carry or display items that may arouse reasonable suspicion that an individual is a member or supporter of a proscribed organisation such as Palestine Action.\\"\\n\\nGiven the CPS's role in guiding prosecutions and advising on the public interest, I respectfully request clarification on the following points:\\n\\n1. Threshold for Reasonable Suspicion\\nDoes the CPS consider it lawful or proportionate for police to interpret the display of a national flag or the expression of slogans such as “Free Palestine” as sufficient to arouse reasonable suspicion of support for a proscribed group?\\n\\n2. CPS Guidance to Police and Prosecutors\\nHas the CPS issued, or is it considering issuing, any guidance to ensure that peaceful protest and expressions of solidarity with Palestine are not misinterpreted as criminal conduct under counter-terrorism legislation?\\n\\n3. Freedom of Expression\\nGiven the protections under Article 10 of the Human Rights Act 1998 and the European Convention on Human Rights, how does the CPS ensure that public prosecutors distinguish between:\\n• Lawful political expression and dissent, and\\n• Unlawful support for proscribed organisations?\\n\\n4. Clarification of Legal Standards\\nWould the CPS consider issuing public-facing clarification to help prevent further chilling effects on protest, especially in cases where expressions of identity or political solidarity are being conflated with extremism?\\n\\nRequest\\n\\nI respectfully ask whether the Crown Prosecution Service intends to:\\n• Clarify its prosecutorial standards with respect to peaceful political protest; and\\n• Prevent misuse of anti-terrorism laws against individuals who express general support for Palestine without any affiliation with proscribed groups.\\n\\nThis issue raises serious concerns about the balance between public safety and fundamental rights. I believe it is essential that prosecutorial discretion is exercised transparently and proportionately to maintain public confidence in the justice system.\\n\\nThank you for your time and attention.` + sig;
 
   window.location.href = `mailto:publicenquiries@cps.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
