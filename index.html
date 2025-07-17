@@ -98,7 +98,7 @@ I believe public clarification from your office is urgently needed to ensure tha
 
 Thank you for your time and attention.
 
-Yours sincerely,\n` + sig;
+Yours sincerely, \n` + sig;
   const mailto = `mailto:attorney.general@attorneygeneral.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const link = document.getElementById('mailtoAG');
   link.href = mailto;
@@ -146,9 +146,8 @@ I respectfully ask whether the Crown Prosecution Service intends to:
 This issue raises serious concerns about the balance between public safety and fundamental rights. I believe it is essential that prosecutorial discretion is exercised transparently and proportionately to maintain public confidence in the justice system.
 Thank you for your time and attention.
 ________________________________________
-Yours sincerely,
+Yours sincerely, \n` + sig;
 
-\n` + sig;
   const mailto = `mailto:publicenquiries@cps.gov.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   const link = document.getElementById('mailtoDPP');
   link.href = mailto;
